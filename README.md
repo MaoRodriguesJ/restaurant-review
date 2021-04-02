@@ -22,7 +22,8 @@ This is a project for a challenge in a hiring process. It was made within two we
 - Functional UI/UX design is needed. You are not required to create a unique design, however, do follow best practices to make the project as functional as possible.
 
 A running version can be found in: https://restaurant-review-challenge.herokuapp.com
+
 The e-mail functions doesn't work (e.g. forgot password) because I don't own a e-mail server.
 
-Maybe you will found issues regards running this application locally due to frontend version o the star component used (since node-sass was deprecated). I did not had time to review it yet.
+Maybe you will find issues regards running this application locally due to frontend version o the star component used (since node-sass was deprecated). I did not had time to review it yet.
 
