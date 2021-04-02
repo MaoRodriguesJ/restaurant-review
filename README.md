@@ -1,8 +1,7 @@
 # restaurant-review
 This is a project for a challenge in a hiring process. It was made within two weeks (around 60-70hrs of work) following this main requirements:
 
-- User must be able to create an account and log in. (If a mobile application, this means that more users can use the app from the same phone).
-- Implement 3 roles with different permission levels
+- User must be able to create an account and log in.
     - Regular User: Can rate and leave a comment for a restaurant
     - Owner: Can create restaurants and reply to comments about owned restaurants
     - Admin: Can edit/delete all users, restaurants, comments, and reviews
