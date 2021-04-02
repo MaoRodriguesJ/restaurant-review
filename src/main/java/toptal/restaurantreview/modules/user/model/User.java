@@ -73,7 +73,7 @@ public class User implements Serializable {
 	@ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.EAGER)
 	@JoinTable(
 			name = "rl_user_role",
-			schema = DatabaseSchema.dev,
+			schema = DatabaseSchema.DEV,
 			joinColumns = @JoinColumn(name = "user_seq"),
 			inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles;
