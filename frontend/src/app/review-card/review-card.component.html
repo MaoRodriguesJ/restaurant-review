@@ -1,0 +1,60 @@
+<mat-card class="mb-3">
+  <mat-card-title>
+    <div class="d-flex justify-content-between">
+      <div>
+        <span>{{ review.author.displayName }}</span>
+        <span class="border-left border-dark pl-2 ml-2">{{ review.visitDate }}</span>
+      </div>
+      <star-rating starType="icon" [rating]="review.rate" staticColor="positive" [readOnly]="true"></star-rating>
+    </div>
+  </mat-card-title>
+  <mat-card-content>
+    <p class="pt-2">{{ review.comment }}</p>
+    <div *ngIf="isAdmin()" class="d-flex justify-content-end">
+      <button class="ml-3" mat-raised-button color="primary" type="button" (click)="onEdit(review.id)">EDIT</button>
+      <button class="ml-3" mat-raised-button color="warn" type="button" (click)="onDelete(review.id)">DELETE</button>
+    </div>
+    <div *ngIf="review.reply" style="border-radius: 1em; background-color: #d2d2d6" class="d-flex flex-column mt-2">
+      <span class="mt-2 ml-2 font-italic" style="color: rgba(0, 0, 0, 0.54)">Reply:</span>
+      <span class="mt-2 ml-5">{{ review.reply }}</span>
+      <span class="d-flex justify-content-end mr-2 mb-2 font-italic" style="color: rgba(0, 0, 0, 0.54)">{{
+        review.replyDate
+      }}</span>
+      <div *ngIf="isAdmin()" class="d-flex ml-1 mb-2">
+        <div *ngIf="editingReply" class="bg-white rounded w-100 review-card">
+          <mat-form-field appearance="outline" class="w-100" style="margin-bottom: -1.25em">
+            <input matInput placeholder="edit reply" [formControl]="reply" />
+          </mat-form-field>
+        </div>
+        <button class="ml-3" mat-raised-button color="primary" type="button" (click)="onEditReply(review.id)">
+          EDIT
+        </button>
+        <div class="mr-3 ml-3">
+          <button mat-raised-button color="warn" type="button" (click)="onDeleteReply(review.id)">DELETE</button>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end">
+      <div *ngIf="isRestaurantOwner() && !review.reply && !replied" class="w-100">
+        <mat-form-field appearance="outline" class="w-100" style="margin-bottom: -1.25em">
+          <input matInput placeholder="enter your reply" [formControl]="reply" />
+        </mat-form-field>
+      </div>
+      <div *ngIf="replied" class="d-flex w-100 justify-content-center mt-2">
+        <mat-icon style="color: #7ed321">check_circle</mat-icon>
+      </div>
+      <div style="margin-top: 0.35em">
+        <button
+          *ngIf="isRestaurantOwner() && !review.reply && !replied"
+          class="ml-3"
+          mat-stroked-button
+          color="primary"
+          type="button"
+          (click)="onReply(review.id)"
+        >
+          REPLY
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

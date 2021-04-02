@@ -1,0 +1,29 @@
+<div class="d-flex">
+  <mat-form-field appearance="outline" class="w-100" style="margin-bottom: -1.25em">
+    <mat-label>Search email</mat-label>
+    <input matInput placeholder="email@example.com" [formControl]="email" />
+  </mat-form-field>
+  <div style="margin-top: 0.35em">
+    <button class="ml-3" mat-raised-button color="primary" type="submit" (click)="onSearch()">SEARCH</button>
+  </div>
+</div>
+<div *ngIf="user" class="mt-2">
+  <mat-card>
+    <mat-card-title>
+      {{ user.username }}
+    </mat-card-title>
+    <mat-card-content>
+      {{ user.displayName }}
+      <div class="d-flex justify-content-end ml-1">
+        <button class="ml-3" mat-stroked-button color="primary" type="button" (click)="onResetPassword(user.username)">
+          <div class="d-flex justify-content-center" *ngIf="resetPasswordMail; else notReseting" style="width: 119px">
+            <mat-spinner diameter="16"></mat-spinner>
+          </div>
+          <ng-template #notReseting>RESET PASSWORD</ng-template>
+        </button>
+        <button class="ml-3" mat-stroked-button color="primary" type="button" (click)="onEdit(user.id)">EDIT</button>
+        <button class="ml-3" mat-raised-button color="warn" type="button" (click)="onDelete(user.id)">DELETE</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

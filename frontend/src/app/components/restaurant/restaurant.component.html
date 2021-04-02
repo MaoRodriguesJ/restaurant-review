@@ -1,0 +1,31 @@
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Enter the restaurant name</mat-label>
+  <input matInput placeholder="Restaurant name" [formControl]="name" />
+  <mat-error *ngIf="hasNameError()">{{ getNameErrorMessage() }}</mat-error>
+</mat-form-field>
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Enter the restaurant description</mat-label>
+  <input matInput placeholder="Restaurant description" [formControl]="description" />
+  <mat-error *ngIf="hasDescriptionError()">{{ getDescriptionErrorMessage() }}</mat-error>
+</mat-form-field>
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Select type of food</mat-label>
+  <mat-select [formControl]="typeOfFood" [compareWith]="selectProvider.compareWith">
+    <mat-option *ngFor="let option of selectProvider.options" [value]="option">
+      {{ selectProvider.description(option) }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="hasTypeOfFoodError()">{{ getTypeOfFoodErrorMessage() }}</mat-error>
+</mat-form-field>
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Enter the restaurant address</mat-label>
+  <input
+    matInput
+    matGoogleMapsAutocomplete
+    placeholder="Restaurant address"
+    [formControl]="address"
+    (onAutocompleteSelected)="onAutocompleteSelected($event)"
+    (onLocationSelected)="onLocationSelected($event)"
+  />
+  <mat-error *ngIf="hasAddressError()">{{ getAddressErrorMessage() }}</mat-error>
+</mat-form-field>

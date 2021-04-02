@@ -1,0 +1,10 @@
+<h2 class="d-flex" mat-dialog-title>{{ title }}</h2>
+<mat-dialog-content class="d-flex mat-typography">
+  <div [innerHTML]="message"></div>
+</mat-dialog-content>
+<mat-dialog-actions class="justify-content-end">
+  <button *ngIf="secondaryOption" mat-stroked-button class="border-0" color="primary" [mat-dialog-close]="false">
+    {{ secondaryOption }}
+  </button>
+  <button mat-stroked-button class="border-0" color="primary" [mat-dialog-close]="true">{{ primaryOption }}</button>
+</mat-dialog-actions>

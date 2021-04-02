@@ -1,0 +1,17 @@
+<mat-form-field floatLabel="auto" appearance="outline" class="w-100">
+  <mat-label>{{ label }}</mat-label>
+  <input
+    #nativeElement
+    matInput
+    [matDatepicker]="picker"
+    [placeholder]="placeholder"
+    autocomplete="off"
+    (dateInput)="onDateInput($event)"
+    [formControl]="control"
+    (blur)="onBlur()"
+  />
+  <mat-datepicker-toggle [ngClass]="hasError && 'mat-error'" matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+  <mat-hint>{{ hint }}</mat-hint>
+  <mat-error *ngIf="hasError">{{ errorMessage }}</mat-error>
+</mat-form-field>

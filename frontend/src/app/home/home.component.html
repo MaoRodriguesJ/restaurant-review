@@ -1,0 +1,9 @@
+<div *ngIf="isRestaurantOwner()" class="mb-2 d-flex justify-content-center">
+  <button mat-stroked-button color="primary" type="button" (click)="registerNewRestaurant()">
+    Register new restaurant
+  </button>
+</div>
+<div *ngIf="isAdmin()" class="mb-2 d-flex justify-content-center">
+  <button mat-stroked-button color="primary" type="button" (click)="searchUser()">Search user</button>
+</div>
+<app-restaurant-list></app-restaurant-list>

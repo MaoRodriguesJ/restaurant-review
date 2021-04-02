@@ -1,0 +1,10 @@
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Enter your display name</mat-label>
+  <input matInput placeholder="Display name" [formControl]="name" />
+  <mat-error *ngIf="hasNameError()">{{ getNameErrorMessage() }}</mat-error>
+</mat-form-field>
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Enter your email</mat-label>
+  <input matInput placeholder="email@example.com" [formControl]="email" />
+  <mat-error *ngIf="hasEmailError()">{{ getEmailErrorMessage() }}</mat-error>
+</mat-form-field>

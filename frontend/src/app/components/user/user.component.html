@@ -1,0 +1,44 @@
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Enter your display name</mat-label>
+  <input matInput placeholder="Display name" [formControl]="name" />
+  <mat-error *ngIf="hasNameError()">{{ getNameErrorMessage() }}</mat-error>
+</mat-form-field>
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Enter your email</mat-label>
+  <input matInput placeholder="email@example.com" [formControl]="email" />
+  <mat-error *ngIf="hasEmailError()">{{ getEmailErrorMessage() }}</mat-error>
+</mat-form-field>
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Confirm Email</mat-label>
+  <input matInput placeholder="email@example.com" [formControl]="confirmEmail" (paste)="$event.preventDefault()" />
+  <mat-error *ngIf="hasConfirmEmailError()">{{ getConfirmEmailErrorMessage() }}</mat-error>
+</mat-form-field>
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Enter your password</mat-label>
+  <input matInput placeholder="******" [formControl]="password" [type]="hide ? 'password' : 'text'" />
+  <button type="button" *ngIf="password.value" mat-icon-button matSuffix (click)="onHide()" style="padding-top: 12px">
+    <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+  </button>
+  <mat-error *ngIf="hasPasswordError()">{{ getPasswordErrorMessage() }}</mat-error>
+</mat-form-field>
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Confirm password</mat-label>
+  <input
+    matInput
+    placeholder="******"
+    [formControl]="confirmPassword"
+    [type]="hideConfirm ? 'password' : 'text'"
+    (paste)="$event.preventDefault()"
+  />
+  <button
+    type="button"
+    *ngIf="password.value"
+    mat-icon-button
+    matSuffix
+    (click)="onHideConfirm()"
+    style="padding-top: 12px"
+  >
+    <mat-icon>{{ hideConfirm ? 'visibility_off' : 'visibility' }}</mat-icon>
+  </button>
+  <mat-error *ngIf="hasConfirmPasswordError()">{{ getConfirmPasswordErrorMessage() }}</mat-error>
+</mat-form-field>

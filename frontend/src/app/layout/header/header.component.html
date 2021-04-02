@@ -1,0 +1,16 @@
+<mat-toolbar color="primary" [class]="toolbarClass">
+  <a [routerLink]="'/home'">
+    <span class="header-title ml-4">{{ appTitle }}</span>
+  </a>
+  <span class="flex-grow-1"></span>
+  <div class="mat-body-2 mr-2 border-right border-white pr-2" (click)="onAccount()" style="cursor: pointer">
+    Account
+  </div>
+  <div class="mat-body-2" (click)="onLogout()" style="cursor: pointer">Logout</div>
+  <button mat-icon-button color="white" (click)="onLogout()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+<div class="container" style="margin-top: 56px; padding-top: 8px">
+  <router-outlet (activate)="onActivate($event)"></router-outlet>
+</div>

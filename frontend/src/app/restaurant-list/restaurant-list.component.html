@@ -1,0 +1,81 @@
+<div matSort matSortDirection="desc">
+  <div class="d-flex">
+    <div mat-sort-header="avgRate" class="mat-h3 mr-1">Sort Rating</div>
+    <span class="mat-h3 border-left border-dark pl-2">Filter by rating greater than:</span>
+    <div class="pt-1">
+      <star-rating
+        starType="icon"
+        [rating]="rating"
+        staticColor="positive"
+        [hoverEnabled]="true"
+        [showHalfStars]="false"
+        (starClickChange)="onRatingClick($event)"
+      ></star-rating>
+    </div>
+  </div>
+  <div *ngFor="let restaurant of restaurants">
+    <mat-card class="mb-3">
+      <mat-card-title>
+        <div class="d-flex justify-content-between">
+          {{ restaurant.name }}
+          <div class="d-flex">
+            <div class="mat-body-1 pt-1 mr-1">{{ restaurant.avgRate | number: '1.2-2' }}</div>
+            <star-rating
+              starType="icon"
+              [rating]="restaurant.avgRate"
+              staticColor="positive"
+              [readOnly]="true"
+              [showHalfStars]="false"
+            ></star-rating>
+          </div>
+        </div>
+      </mat-card-title>
+      <mat-card-content>
+        <p class="pt-2">Type of food: {{ restaurant.typeOfFood }}</p>
+        <div class="d-flex justify-content-end">
+          <button
+            *ngIf="isRestaurantOwner()"
+            class="ml-3"
+            mat-stroked-button
+            color="primary"
+            type="button"
+            (click)="onPendingRepliesClick(restaurant.id)"
+            [matBadge]="restaurant.pendingReplies"
+            matBadgePosition="after"
+            matBadgeColor="accent"
+          >
+            PENDING REPLIES
+          </button>
+          <button
+            *ngIf="isRegularUser()"
+            class="ml-3"
+            mat-stroked-button
+            color="primary"
+            type="button"
+            (click)="onRateClick(restaurant.id)"
+          >
+            RATE
+          </button>
+          <button class="ml-3" mat-raised-button color="primary" type="button" (click)="onViewClick(restaurant.id)">
+            VIEW
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div *ngIf="resultsLength === 0 && !isLoadingResults" class="w-100 text-center mt-3">
+    <mat-label class="mat-h3" color="rgba(0, 0, 0, 0.54);">No results found</mat-label>
+  </div>
+  <div
+    *ngIf="isLoadingResults"
+    class="w-100 align-items-center d-flex justify-content-center table-message white-background"
+  >
+    <mat-spinner class="pb-3" diameter="32"></mat-spinner>
+  </div>
+  <mat-paginator
+    class="mt-3 border-top"
+    [length]="resultsLength"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+  ></mat-paginator>
+</div>

@@ -1,0 +1,11 @@
+<div class="d-flex align-items-center" style="min-height: 65vh">
+  <div class="container d-flex justify-content-center align-items-center" style="max-width: 350px">
+    <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()" *ngIf="initialValues | async as init; else loading">
+      <app-review [formGroup]="reviewForm" controlPath="review" [initialValues]="init"></app-review>
+      <button mat-raised-button color="primary" type="submit" class="w-100 mt-3">EDIT</button>
+    </form>
+    <ng-template #loading>
+      <mat-spinner diameter="32"></mat-spinner>
+    </ng-template>
+  </div>
+</div>

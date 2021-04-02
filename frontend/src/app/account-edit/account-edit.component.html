@@ -1,0 +1,25 @@
+<div class="d-flex align-items-center" style="min-height: 10vh">
+  <div class="container d-flex justify-content-center align-items-center">
+    <mat-tab-group mat-align-tabs="center" class="w-100">
+      <mat-tab label="Account">
+        <div class="container d-flex justify-content-center align-items-center mt-4" style="max-width: 350px">
+          <form [formGroup]="userForm" (ngSubmit)="onSubmitUser()" *ngIf="initialValues | async as init; else loading">
+            <app-edit-user [formGroup]="userForm" controlPath="user" [initialValues]="init"></app-edit-user>
+            <button mat-raised-button color="primary" type="submit" class="w-100 mt-3">EDIT</button>
+          </form>
+          <ng-template #loading>
+            <mat-spinner diameter="32"></mat-spinner>
+          </ng-template>
+        </div>
+      </mat-tab>
+      <mat-tab label="Password">
+        <div class="container d-flex justify-content-center align-items-center mt-4" style="max-width: 350px">
+          <form [formGroup]="passwordForm" (ngSubmit)="onSubmitPassword()">
+            <app-change-password [formGroup]="passwordForm" controlPath="password"></app-change-password>
+            <button mat-raised-button color="primary" type="submit" class="w-100 mt-3">CHANGE</button>
+          </form>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

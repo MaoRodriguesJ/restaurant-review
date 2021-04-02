@@ -1,0 +1,7 @@
+export const REQUIRED = 'You must enter a value'
+export const REQUIRED_SELECT = 'You must select a value'
+export const EMAIL = 'Not a valid email'
+export const PASSWORD = 'Password must have at least one numbe and letter'
+export const CONFIRM_EMAIL = 'Confirm email must be equal to email'
+export const CONFIRM_PASSWORD = 'Confirm password must be equal to password'
+export const BEFORE_EQUAL_TODAY = 'Date must be before or equal today'

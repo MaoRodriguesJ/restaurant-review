@@ -1,0 +1,39 @@
+<div class="d-flex align-items-center" style="min-height: 75vh">
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="d-none d-lg-block center" style="width: 500px">
+      <img class="w-100" src="/assets/images/restaurant-english.jpg" alt="img" />
+    </div>
+    <div class="mx-4" style="max-width: 350px">
+      <div class="mat-h1">Restaurant Review</div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="email@example.com" [formControl]="email" />
+          <mat-error *ngIf="hasEmailError()">{{ getEmailErrorMessage() }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100" style="margin-bottom: -0.5em">
+          <mat-label>Enter your password</mat-label>
+          <input matInput placeholder="******" [formControl]="password" [type]="hide ? 'password' : 'text'" />
+          <button
+            type="button"
+            *ngIf="password.value"
+            mat-icon-button
+            matSuffix
+            (click)="onHide()"
+            style="padding-top: 12px"
+          >
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          <mat-error *ngIf="hasPasswordError()">{{ getPasswordErrorMessage() }}</mat-error>
+        </mat-form-field>
+        <div class="d-flex justify-content-end">
+          <a routerLink="/forgot-password" class="mat-caption">Forgot password</a>
+        </div>
+        <button mat-raised-button color="primary" type="submit" class="w-100 mt-3">SIGN IN</button>
+        <button mat-stroked-button color="primary" type="button" class="w-100 mt-3" (click)="onSignUp()">
+          SIGN UP
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

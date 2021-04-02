@@ -1,0 +1,19 @@
+<div class="w-100 mb-3 mat-body-1">
+  <star-rating-control
+    size="large"
+    starType="icon"
+    staticColor="positive"
+    [hoverEnabled]="true"
+    [formControl]="rate"
+  ></star-rating-control>
+</div>
+<app-date-field
+  [formControl]="visitDate"
+  label="Visit date"
+  [hasError]="hasVisitDateError()"
+  [errorMessage]="getVisitDateMessage()"
+></app-date-field>
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Enter your comment</mat-label>
+  <input matInput placeholder="enter your comment" [formControl]="comment" />
+</mat-form-field>

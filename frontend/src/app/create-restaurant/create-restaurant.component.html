@@ -1,0 +1,12 @@
+<div class="d-flex align-items-center" style="min-height: 65vh">
+  <div class="container">
+    <form [formGroup]="restaurantForm" (ngSubmit)="onSubmit()">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4">
+          <app-restaurant [formGroup]="restaurantForm" controlPath="restaurant"></app-restaurant>
+          <button mat-raised-button color="primary" type="submit" class="w-100 mt-3">CREATE</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

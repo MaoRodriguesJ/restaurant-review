@@ -1,0 +1,15 @@
+<div class="d-flex align-items-center" style="min-height: 65vh">
+  <div class="container">
+    <form [formGroup]="restaurantForm" (ngSubmit)="onSubmit()" *ngIf="initialValues | async as init; else loading">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4">
+          <app-restaurant [formGroup]="restaurantForm" controlPath="restaurant" [initialValues]="init"></app-restaurant>
+          <button mat-raised-button color="primary" type="submit" class="w-100 mt-3">EDIT</button>
+        </div>
+      </div>
+    </form>
+    <ng-template #loading>
+      <mat-spinner diameter="32"></mat-spinner>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="d-flex align-items-center" style="min-height: 75vh">
+  <div class="container d-flex justify-content-center align-items-center" style="max-width: 350px">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <app-user [formGroup]="userForm" controlPath="user"></app-user>
+      <button mat-raised-button color="primary" type="submit" class="w-100 mt-3">SIGN UP</button>
+    </form>
+  </div>
+</div>
