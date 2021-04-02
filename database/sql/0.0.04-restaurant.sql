@@ -22,31 +22,3 @@ comment on column dev.tb_restaurant.restaurant_type_of_food is 'Foreign key to t
 comment on column dev.tb_restaurant.restaurant_address is 'Restaurant address';
 comment on column dev.tb_restaurant.restaurant_latitude is 'Restaurant latitude';
 comment on column dev.tb_restaurant.restaurant_longitude is 'Restaurant longitude';
-
-
-insert into dev.tb_restaurant(
-    restaurant_seq,
-    restaurant_owner,
-    restaurant_name,
-    restaurant_description,
-    restaurant_type_of_food,
-    restaurant_address
-) values (1, 3, 'Restaurant', 'Serves food', 1, 'Addres');
-
-insert into dev.tb_restaurant(
-    restaurant_seq,
-    restaurant_owner,
-    restaurant_name,
-    restaurant_description,
-    restaurant_type_of_food,
-    restaurant_address
-) values (2, 3, 'Restaurant 2', 'Serves food', 2, 'Addres');
-
-insert into dev.tb_restaurant(
-    restaurant_seq,
-    restaurant_owner,
-    restaurant_name,
-    restaurant_description,
-    restaurant_type_of_food,
-    restaurant_address
-) values (3, 4, 'Restaurant 3', 'Serves food', 3, 'Addres');
