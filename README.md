@@ -25,5 +25,5 @@ A running version can be found in: https://toptal-restaurant-review.herokuapp.co
 
 The e-mail functions doesn't work (e.g. forgot password) because I don't own a e-mail server.
 
-Maybe you will find issues regards running this application locally due to frontend version o the star component used (since node-sass was deprecated). I did not had time to review it yet.
+Maybe you will find issues regards running this application locally due to frontend version of the star component used (since node-sass was deprecated). I did not had time to review it yet.
 
