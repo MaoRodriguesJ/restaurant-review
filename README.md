@@ -21,7 +21,7 @@ This is a project for a challenge in a hiring process. It was made within two we
 - REST API. Make it possible to perform all user actions via the API, including authentication (If a mobile application and you don’t know how to create your own backend you can use Firebase.com or similar services to create the API).
 - Functional UI/UX design is needed. You are not required to create a unique design, however, do follow best practices to make the project as functional as possible.
 
-A running version can be found in: https://restaurant-review-challenge.herokuapp.com
+A running version can be found in: https://toptal-restaurant-review.herokuapp.com
 
 The e-mail functions doesn't work (e.g. forgot password) because I don't own a e-mail server.
 
