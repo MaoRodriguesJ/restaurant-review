@@ -21,7 +21,8 @@ This is a project for a challenge in a hiring process. It was made within two we
 - REST API. Make it possible to perform all user actions via the API, including authentication (If a mobile application and you don’t know how to create your own backend you can use Firebase.com or similar services to create the API).
 - Functional UI/UX design is needed. You are not required to create a unique design, however, do follow best practices to make the project as functional as possible.
 
-A running version can be found in: https://dev-restaurant-review.herokuapp.com/
+A running version can be found in: https://restaurant-review-challenge.herokuapp.com
+The e-mail functions doesn't work (e.g. forgot password) because I don't own a e-mail server.
 
 Maybe you will found issues regards running this application locally due to frontend version o the star component used (since node-sass was deprecated). I did not had time to review it yet.
 
