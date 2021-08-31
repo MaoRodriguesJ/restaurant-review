@@ -1,5 +1,4 @@
 # restaurant-review
-This is a project for a challenge in a hiring process. It was made within two weeks (around 60-70hrs of work) following this main requirements:
 
 - User must be able to create an account and log in.
     - Regular User: Can rate and leave a comment for a restaurant
@@ -23,7 +22,7 @@ This is a project for a challenge in a hiring process. It was made within two we
 
 A running version can be found in: https://toptal-restaurant-review.herokuapp.com
 
-The e-mail functions doesn't work (e.g. forgot password) because I don't own a e-mail server.
+The e-mail functions doesn't work (e.g. forgot password) because I don't own an e-mail server.
 
 Maybe you will find issues regards running this application locally due to frontend version of the star component used (since node-sass was deprecated). I did not had time to review it yet.
 
